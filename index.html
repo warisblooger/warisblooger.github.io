@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syed Waris — ZorixSoft &amp; WAHA Studios</title>
+  <meta name="description" content="Syed Waris is the founder of ZorixSoft and WAHA Studios. Android, iOS, and web products, from interface to store launch.">
+  <meta name="author" content="Syed Waris">
+  <link rel="canonical" href="https://warisblooger.github.io/">
+  <meta property="og:title" content="Syed Waris — ZorixSoft &amp; WAHA Studios">
+  <meta property="og:description" content="Android, iOS, and web products. Design, code, and store publishing.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07080d;
+      --ink: #f4f1ea;
+      --muted: #a39e94;
+      --line: rgba(244, 241, 234, 0.12);
+      --lime: #d6ff4a;
+      --card: #10131c;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(900px 420px at 100% -10%, rgba(214, 255, 74, 0.08), transparent 60%),
+        radial-gradient(700px 380px at -10% 20%, rgba(139, 124, 255, 0.12), transparent 55%),
+        var(--bg);
+      color: var(--ink);
+      font-family: Manrope, ui-sans-serif, sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0 10px;
+      gap: 16px;
+    }
+    .mark {
+      font-family: Syne, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 13px;
+    }
+    nav { display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--ink); }
+    .hero { padding: 72px 0 36px; }
+    .eyebrow {
+      color: var(--lime);
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      font-weight: 700;
+      margin: 0 0 18px;
+    }
+    h1 {
+      font-family: Syne, sans-serif;
+      font-weight: 800;
+      font-size: clamp(48px, 8vw, 92px);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      margin: 0;
+    }
+    .lede {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 18px;
+      margin: 22px 0 0;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .btn.solid { background: var(--lime); color: #111; }
+    .btn.ghost { border: 1px solid var(--line); color: var(--ink); }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 48px 0 10px;
+    }
+    .stat, .card, .work {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .stat { padding: 18px 18px 16px; }
+    .stat b { display: block; font-family: Syne, sans-serif; font-size: 18px; margin-bottom: 4px; }
+    .stat span { color: var(--muted); font-size: 14px; }
+    section { padding: 42px 0; }
+    h2 {
+      font-family: Syne, sans-serif;
+      font-size: 32px;
+      letter-spacing: -0.03em;
+      margin: 0 0 18px;
+    }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .card, .work { padding: 22px; }
+    .card h3, .work h3 { margin: 0 0 8px; font-size: 20px; }
+    .card p, .work p { margin: 0; color: var(--muted); }
+    .card a, .work a { color: var(--lime); text-decoration: none; font-weight: 700; }
+    .works { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .tag {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+    }
+    .stack { display: flex; flex-wrap: wrap; gap: 8px; }
+    .stack span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 48px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer a { color: var(--ink); }
+    @media (max-width: 760px) {
+      nav { display: none; }
+      .stats, .grid, .works { grid-template-columns: 1fr; }
+      .hero { padding-top: 36px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="mark">SYED WARIS</div>
+      <nav>
+        <a href="#studios">Studios</a>
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">ANDROID · IOS · WEB</p>
+      <h1>Syed Waris</h1>
+      <p class="lede">Founder of ZorixSoft and WAHA Studios. I design and ship mobile apps and websites — interface, code, and the store or domain they launch on.</p>
+      <div class="actions">
+        <a class="btn solid" href="mailto:hello@zorixsoft.com">hello@zorixsoft.com</a>
+        <a class="btn ghost" href="https://zorixsoft.com">ZorixSoft</a>
+        <a class="btn ghost" href="https://wahastudios.org">WAHA Studios</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>Two studios</b><span>ZorixSoft and WAHA Studios</span></div>
+        <div class="stat"><b>Mobile + web</b><span>Android, iOS, and websites</span></div>
+        <div class="stat"><b>Launch included</b><span>Play Store, App Store, live domains</span></div>
+      </div>
+    </section>
+
+    <section id="studios">
+      <h2>Studios</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>ZorixSoft</h3>
+          <p>App and web studio. iPhone apps, Android apps, and websites with a clear UI, solid performance, and a path to publish.</p>
+          <p style="margin-top:14px"><a href="https://zorixsoft.com">zorixsoft.com →</a></p>
+        </article>
+        <article class="card">
+          <h3>WAHA Studios</h3>
+          <p>Software, websites, SEO, social, and mobile publishing. Led by Syed Waris, from the product idea through support pages.</p>
+          <p style="margin-top:14px"><a href="https://wahastudios.org">wahastudios.org →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2>Selected work</h2>
+      <div class="works">
+        <article class="work">
+          <h3>Upsora</h3>
+          <p>AI photo enhancer, DP maker, captions, and cleanup for Android and iOS.</p>
+          <a class="tag" href="https://wahastudios.org/upsora/support/">View support</a>
+        </article>
+        <article class="work">
+          <h3>CoolPrompt</h3>
+          <p>Free AI photo prompts. Save them, copy them, and open in ChatGPT or Gemini.</p>
+          <a class="tag" href="https://wahastudios.org/coolprompt/support/">View support</a>
+        </article>
+        <article class="work">
+          <h3>PromptLeez</h3>
+          <p>AI photo and video prompts with favorites and a direct handoff to ChatGPT or Gemini.</p>
+          <a class="tag" href="https://wahastudios.org/promptleez/support/">View support</a>
+        </article>
+        <article class="work">
+          <h3>MixPrompt</h3>
+          <p>Prompt studio on Android and iOS. Browse, favorite, and generate prompts for creative work.</p>
+          <a class="tag" href="https://wahastudios.org/mixprompt/support/">View support</a>
+        </article>
+        <article class="work">
+          <h3>PromptBot</h3>
+          <p>ZorixSoft’s AI photo-editing prompt app on Google Play.</p>
+          <a class="tag" href="https://play.google.com/store/apps/details?id=com.zorixsoft.PromptBot">Play Store</a>
+        </article>
+        <article class="work">
+          <h3>Studio sites</h3>
+          <p>The public homes for both studios, written and shipped as the front door for new work.</p>
+          <a class="tag" href="https://zorixsoft.com">ZorixSoft</a>
+          <a class="tag" href="https://wahastudios.org">WAHA Studios</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="stack">
+      <h2>Stack</h2>
+      <div class="stack">
+        <span>Flutter</span><span>Swift</span><span>Kotlin</span><span>PHP</span>
+        <span>JavaScript</span><span>HTML / CSS</span><span>React</span><span>Firebase</span>
+        <span>MySQL</span><span>Nginx</span><span>REST APIs</span><span>Git</span>
+        <span>SEO</span><span>Play Store</span><span>App Store</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Email</h3>
+          <p><a href="mailto:hello@zorixsoft.com">hello@zorixsoft.com</a></p>
+        </article>
+        <article class="card">
+          <h3>Phone</h3>
+          <p><a href="tel:+923055922080">+92 305 5922080</a></p>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <div>Syed Waris · ZorixSoft · WAHA Studios</div>
+      <div><a href="https://github.com/warisblooger">github.com/warisblooger</a></div>
+    </footer>
+  </div>
+</body>
+</html>
