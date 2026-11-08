@@ -10,6 +10,7 @@
   <meta property="og:title" content="Syed Waris — ZorixSoft &amp; WAHA Studios">
   <meta property="og:description" content="Android, iOS, and web products. Design, code, and store publishing.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://warisblooger.github.io/syed-waris.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
@@ -52,7 +53,22 @@
     nav { display: flex; gap: 22px; font-size: 14px; color: var(--muted); }
     nav a { text-decoration: none; }
     nav a:hover { color: var(--ink); }
-    .hero { padding: 72px 0 36px; }
+    .hero { padding: 48px 0 36px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(220px, 340px);
+      gap: 36px;
+      align-items: center;
+    }
+    .portrait-wrap { justify-self: end; }
+    .portrait {
+      display: block;
+      width: min(320px, 100%);
+      height: auto;
+      border-radius: 32px;
+      border: 3px solid var(--lime);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    }
     .eyebrow {
       color: var(--lime);
       letter-spacing: 0.18em;
@@ -144,7 +160,10 @@
     @media (max-width: 760px) {
       nav { display: none; }
       .stats, .grid, .works { grid-template-columns: 1fr; }
-      .hero { padding-top: 36px; }
+      .hero { padding-top: 28px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .portrait-wrap { justify-self: start; }
+      .portrait { width: 168px; border-radius: 24px; }
       footer { flex-direction: column; }
     }
   </style>
@@ -162,13 +181,20 @@
     </header>
 
     <section class="hero">
-      <p class="eyebrow">ANDROID · IOS · WEB</p>
-      <h1>Syed Waris</h1>
-      <p class="lede">Founder of ZorixSoft and WAHA Studios. I design and ship mobile apps and websites — interface, code, and the store or domain they launch on.</p>
-      <div class="actions">
-        <a class="btn solid" href="mailto:hello@zorixsoft.com">hello@zorixsoft.com</a>
-        <a class="btn ghost" href="https://zorixsoft.com">ZorixSoft</a>
-        <a class="btn ghost" href="https://wahastudios.org">WAHA Studios</a>
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">ANDROID · IOS · WEB</p>
+          <h1>Syed Waris</h1>
+          <p class="lede">Founder of ZorixSoft and WAHA Studios. I design and ship mobile apps and websites — interface, code, and the store or domain they launch on.</p>
+          <div class="actions">
+            <a class="btn solid" href="mailto:hello@zorixsoft.com">hello@zorixsoft.com</a>
+            <a class="btn ghost" href="https://zorixsoft.com">ZorixSoft</a>
+            <a class="btn ghost" href="https://wahastudios.org">WAHA Studios</a>
+          </div>
+        </div>
+        <div class="portrait-wrap">
+          <img class="portrait" src="syed-waris.jpg" width="840" height="840" alt="Portrait of Syed Waris">
+        </div>
       </div>
       <div class="stats">
         <div class="stat"><b>PromptPix</b><span>1M+ installs on Google Play</span></div>
